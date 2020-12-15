@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/* test variable */
+/* test d'imbrication */
+body {
+  background-color: #ECECEC; }
+  body p {
+    border: 1px solid red; }
+
+/* test d'héritage */
+/*button {
+    @extend %button;
+}*/
+/* test mixin */
+button {
+  border-radius: 6px;
+  padding: 15px;
+  margin: 10px; }
+  button:hover {
+    cursor: pointer;
+    background-color: #FF0000;
+    color: white; }

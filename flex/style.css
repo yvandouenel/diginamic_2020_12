@@ -1,0 +1,19 @@
+* {
+    border: 1px solid black;
+}
+/* l'élément parent est celui qui indique aux éléments enfants comment se comporter*/
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start; /* indique la position des éléments par rapport au conteneur*/
+    align-items: center; /* indique la position des éléments les uns par rapport aux autres sur une même ligne*/
+    height: 100vh;
+}
+
+/* eléments dans la section */
+section > * {
+    border: 1px solid red;
+    flex-basis: 30%; /* équivalent à width si axe principal est row sinon équivalent à height */  
+}
