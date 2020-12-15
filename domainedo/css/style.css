@@ -7821,9 +7821,25 @@ button.btn-ddo {
 
 /* Média query classique : quand l'écran sera plus petit que 992px, on n'affiche pas les icônes des réseaux sociaux */
 @media screen and (max-width: 992px) {
+  .first-row {
+    align-items: center; }
+
   .social-ddo {
-    display: none; } }
+    display: none; }
+
+  #abonnement {
+    display: none; }
+
+  .justify-content-end {
+    justify-content: center !important; }
+
+  #top-search {
+    text-align: right; } }
 /* Média query avec une mixin bootstrap (media-breakpoint-up) : quand l'écran sera plus grand que 992px, on n'affiche pas le menu  */
 @media (min-width: 992px) {
-  .navbar-nav {
+  /* Gestion de l'ordre des colonnes */
+  .first-col {
+    order: 4; }
+
+  #top-search {
     display: none; } }

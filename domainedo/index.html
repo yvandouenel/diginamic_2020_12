@@ -13,8 +13,9 @@
 
 <body>
     <header class="container mt-2">
-        <div class="row">
-            <div class="col">
+        <div class="row first-row">
+            
+            <div class="col col-lg-12 first-col">
                 <nav class="navbar navbar-expand-lg navbar-light">
                    
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -45,7 +46,10 @@
 
                     </div>
                 </nav>
-                <ul class="nav social-ddo">
+                
+            </div>
+            <div class="col social-ddo">
+                <ul class="nav ">
                     <li>
                         <i class="fab fa-facebook-f fa-xs"><span class="sr-only">facebook</span></i>
                     </li>
@@ -65,12 +69,14 @@
                     </a href=".">
                 </h1>
             </div>
-            <div class="col justify-content-end d-flex">
+            <div id="top-search" class="col"><i class="fas fa-search fa-lg"><span class="sr-only">Recherche</span></i></div>
+            <div class="col justify-content-end d-flex" id="top-buttons">
                 <ul class="list-unstyled d-flex">
                     <li><button class="btn-ddo mr-2">Notifications</button></li>
-                    <li><button class="btn-ddo">Abonnement</button></li>
+                    <li><button class="btn-ddo" id="abonnement">Abonnement</button></li>
                 </ul>
             </div>
+
         </div>
     </header>
 
