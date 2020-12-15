@@ -19,9 +19,10 @@
         display: none;
     }
 }
-/* Média query classique : quand l'écran sera plus grand que 992px, on n'affiche pas le menu  */
-@media screen and (min-width: 992px) {
+
+/* Média query avec une mixin bootstrap (media-breakpoint-up) : quand l'écran sera plus grand que 992px, on n'affiche pas le menu  */
+@include media-breakpoint-up(lg) {
     .navbar-nav {
         display: none;
     }
-}
+  }
