@@ -7798,6 +7798,10 @@ a.text-dark:hover, a.text-dark:focus {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6; } }
+/* images */
+img {
+  max-width: 100%; }
+
 /* boutons */
 button.btn-ddo {
   border: 1px solid #E74C2B !important;
@@ -7843,3 +7847,73 @@ button.btn-ddo {
 
   #top-search {
     display: none; } }
+.app-btn-none, .app-btn, .app-btn-header, .app-btn-main, .app-btn-bg-hover-black, .app-btn-bg-hover-primary, .app-btn-bg-hover-primary-all, .app-btn-bg-primary-hover-bg-white, .app-btn-arrow, .app-btn-nav {
+  border: none;
+  background-color: rgba(255, 255, 255, 0); }
+  .app-btn-none:hover, .app-btn:hover, .app-btn-header:hover, .app-btn-main:hover, .app-btn-bg-hover-black:hover, .app-btn-bg-hover-primary:hover, .app-btn-bg-hover-primary-all:hover, .app-btn-bg-primary-hover-bg-white:hover, .app-btn-arrow:hover, .app-btn-nav:hover {
+    cursor: pointer; }
+
+.app-btn, .app-btn-header, .app-btn-main, .app-btn-bg-hover-black, .app-btn-bg-hover-primary, .app-btn-bg-hover-primary-all, .app-btn-bg-primary-hover-bg-white, .app-btn-arrow {
+  border-style: solid;
+  border-width: 1px;
+  height: 30px;
+  font-size: 0.8rem;
+  font-weight: bold; }
+  .app-btn i, .app-btn-header i, .app-btn-main i, .app-btn-bg-hover-black i, .app-btn-bg-hover-primary i, .app-btn-bg-hover-primary-all i, .app-btn-bg-primary-hover-bg-white i, .app-btn-arrow i {
+    font-size: 0.8rem;
+    font-weight: bold; }
+
+.app-btn-header {
+  color: #E74C2B;
+  border-color: #E74C2B; }
+  .app-btn-header:hover {
+    color: white;
+    background-color: #E74C2B; }
+
+.app-btn-nav i {
+  font-size: 2rem; }
+.app-btn-nav span {
+  font-size: 0.7rem; }
+
+.app-btn-main, .app-btn-bg-hover-black, .app-btn-bg-hover-primary, .app-btn-bg-hover-primary-all, .app-btn-bg-primary-hover-bg-white {
+  color: #E74C2B;
+  background-color: white;
+  height: 40px;
+  border-color: #E74C2B; }
+  .app-btn-main:hover, .app-btn-bg-hover-black:hover, .app-btn-bg-hover-primary:hover, .app-btn-bg-hover-primary-all:hover, .app-btn-bg-primary-hover-bg-white:hover {
+    color: white; }
+
+.app-btn-bg-hover-black:hover {
+  background-color: black; }
+
+.app-btn-bg-hover-primary:hover, .app-btn-bg-hover-primary-all:hover {
+  background-color: #E74C2B; }
+
+.app-btn-bg-hover-primary-all {
+  height: 45px;
+  border-width: 2px; }
+  .app-btn-bg-hover-primary-all i:before {
+    font-size: 1.2rem; }
+
+.app-btn-arrow {
+  background-color: #E74C2B;
+  color: white;
+  border-color: #E74C2B;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .app-btn-arrow i:before {
+    font-size: 1.5rem; }
+  .app-btn-arrow:hover {
+    background-color: white;
+    color: #E74C2B; }
+
+.app-btn-bg-primary-hover-bg-white {
+  background-color: #E74C2B;
+  color: white;
+  border-color: #E74C2B; }
+  .app-btn-bg-primary-hover-bg-white:hover {
+    background-color: white;
+    color: #E74C2B; }
