@@ -7800,4 +7800,21 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 /* boutons */
 button.btn-ddo {
-  border: 1px solid #E74C2B !important; }
+  border: 1px solid #E74C2B !important;
+  background-color: white;
+  color: #E74C2B;
+  font-weight: 700;
+  text-transform: uppercase; }
+  button.btn-ddo:hover {
+    color: white;
+    background-color: #E74C2B; }
+
+.social-ddo li {
+  margin-right: 15px;
+  /* le before correspond à une icône */
+  /* Au survol de l'icône on change de couleur */ }
+  .social-ddo li i:before {
+    font-size: 1.2em;
+    cursor: pointer; }
+  .social-ddo li i:hover:before {
+    color: #E74C2B; }
