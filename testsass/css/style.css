@@ -7,15 +7,27 @@ body {
     border: 1px solid red; }
 
 /* test d'héritage */
-/*button {
-    @extend %button;
-}*/
-/* test mixin */
-button {
+.button, button {
   border-radius: 6px;
   padding: 15px;
   margin: 10px; }
-  button:hover {
+  .button:hover, button:hover {
     cursor: pointer;
-    background-color: #FF0000;
+    background-color: #2C2C2C;
     color: white; }
+
+/* test mixin 
+@mixin bouton($bgcolor) {
+    border-radius: 6px;
+    padding: 15px;
+    margin: 10px;
+    &:hover {
+        cursor: pointer;
+        background-color: $bgcolor;
+        color: white;
+    }
+}
+button {
+    @include bouton($rouge);
+}
+*/
