@@ -9,3 +9,23 @@
  *     Cela sous-entend que vous avez trouvé comment modifier des propriétés css via 
  *     du javascript
  */
+
+const h1 = document.querySelector("h1");
+
+
+h1.onclick = function() {
+    element =  document.querySelector("p");
+    console.log("classList : ", element.classList);
+    element.classList.toggle("disparaitre");
+}
+/* const h1 = document.querySelector("h1");
+const p = document.querySelector("p");
+
+h1.onclick = function () {
+  const visibility = p.style.visibility;
+  console.log("visibility : ", visibility);
+  if(!visibility || visibility == "visible") p.style.visibility = "hidden";
+  else p.style.visibility = "visible";
+} */
+
+
