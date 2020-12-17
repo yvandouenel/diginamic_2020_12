@@ -3,7 +3,6 @@ const button_add = document.querySelector("#add-p");
 
 // Ajout d'un "event listener" sur button_add
 button_add.onclick = function() {
-    console.log("click sur le bouton add");
     createAddDomElt("p","Lorem ipsum", document.querySelector("#paragraphes"));
 }
 
