@@ -15,22 +15,43 @@ window.document.body.appendChild(h2);
 
 // ajout d'un span dans le titre de niveau 1
 createAddDomElt("span", "test", h1);
-createAddDomElt("h3", "Titre de niveau 3");
+createAddDomElt(
+    "h3",
+    "Titre de niveau 3",
+    document.body,
+    { 
+        "id": "myh3", 
+        "class": "primary red ", 
+        "lang": "fr",
+        "title": "ceci est un titre" 
+    }// objet littéral soit un tableau associatif (clé - valeur) avec la syntaxe JSON
+    // un fois que l'on a la clé d'une valeur, pour obtenir la valeur elle même : attributes["id"]
+);
 
 console.log("window", window.document);
-
-function createAddDomElt (tagname, text, parentElt = document.body) {
+/**
+ * 4 paramètres qui prendront la valeur des arguments passés
+ * @param {string} tagname 
+ * @param {string} text 
+ * @param {DOM Element} parentElt 
+ * @param {object} attributes 
+ */
+function createAddDomElt(tagname, text, parentElt = document.body, attributes) {
     let element = document.createElement(tagname);
-    if(text) element.textContent = text;
+    if (text) element.textContent = text;
     parentElt.appendChild(element);
+    // Parcours d'un objet littéral avec for ... in
+    for(let key in attributes) {
+        element.setAttribute(key, attributes[key]);
+    }
+
 }
 
+// Sélection d'élemetns du dom avec la méthode querySelector (comprendre requête via des selecteurs css)
+/* const body = window.document.body;
+const body = document.body; */
+const body = document.querySelector("body");
 
-
-
-// Créer une fonction qui attend 3 paramètres : 
-// - nature de l'élément du dom (ex : section)
-// - texte contenu dans l'élément du dom
-// - parent de l'élement du dom
-// Cette fonction permet de créer un élément du dom, lui ajouter du texte et 
-// le placer dans un élément parent.
+// récupération de plusieurs éléments du DOM sous forme d'un tableau à index
+const lis = document.querySelectorAll("ul > li");
+console.log("lis", lis);
