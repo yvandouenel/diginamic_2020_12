@@ -52,7 +52,8 @@ export default class Card extends CoopDom {
         const article = this.createAddDomElt(
             "article",
             "",
-            this.column.domElements.section_cards
+            this.column.domElements.section_cards,
+            {"class": "text-light bg-dark rounded p-4 mt-2 mb-2"}
         );
         // Ici, il faut maintenant créer les élément du dom qui constituent une carte
         // soit pour commencer l'affichage de la question en h3
@@ -84,7 +85,7 @@ export default class Card extends CoopDom {
             "input",
             "",
             form_edit,
-            {"type": "text", "value": this.question}
+            {"type": "text", "value": this.question, "class": "form-control"}
         );
         const label_answer = this.createAddDomElt(
             "label",
@@ -95,13 +96,13 @@ export default class Card extends CoopDom {
             "input",
             "",
             form_edit,
-            {"type": "text", "value": this.answer}
+            {"type": "text", "value": this.answer, "class": "form-control"}
         );
         const button_submit_edit = this.createAddDomElt(
             "input",
             "",
             form_edit,
-            {"type": "submit", "value": "Modifier"}
+            {"type": "submit", "value": "Modifier", "class": "btn btn-primary mt-3 mb-3"}
         );
         // on cache le formulaire
         form_edit.hidden = true;
@@ -110,7 +111,8 @@ export default class Card extends CoopDom {
         const button_remove = this.createAddDomElt(
             "button",
             "Supprimer la carte",
-            article
+            article,
+            {"class": "btn btn-danger mr-2 mb-2 w-100"}
         );
 
 
@@ -121,7 +123,8 @@ export default class Card extends CoopDom {
         const button_edit = this.createAddDomElt(
             "button",
             "Modifier la carte",
-            article
+            article,
+            {"class": "btn btn-warning mr-2 w-100"}
         );
         
         return {
