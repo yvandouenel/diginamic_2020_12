@@ -14,6 +14,6 @@ export default class CoopDom {
         for (let key in attributes) {
             element.setAttribute(key, attributes[key]);
         }
-
+        return element; // retourne une référence à l'élément du DOM
     }
 }
