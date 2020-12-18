@@ -1,3 +1,4 @@
+import Card from "./Card.js";
 import CoopDom from "./CoopDom.js";
 
 export default class Column extends CoopDom {
@@ -10,17 +11,18 @@ export default class Column extends CoopDom {
         this.domElements = this.render();
 
         // Gestion des événements
-        this.domElements.button.onclick = function() {
+        this.domElements.button.onclick = () => {
             console.log("click sur le bouton d'ajout d'une carte");
-        }
+            console.log("this : ", this);
+            this.addCard();
+        };
         
     }
+    addCard = () => {
+        new Card("Question", "Réponse");
+    }
     render = () => {
-        // on va créer des éléments du DOM
-        // this.createAddDomElt("div", "texte", document.getElementById("main"));
-        // Créer ici : une section sans texte qui correspond à la colonne
-        // puis un titre de niveau 2 avec le titre de la colonne
-        // puis un bouton "ajouter une carte"
+        // Création  des éléments du DOM grâce à la méthode createAddDomElt héritée de CoopDom
         const section = this.createAddDomElt("section", "", document.getElementById("main"),{"class":"column"});
         const title = this.createAddDomElt("h2", this.title, section);
         const button = this.createAddDomElt("button", "Ajouter une carte", section);
