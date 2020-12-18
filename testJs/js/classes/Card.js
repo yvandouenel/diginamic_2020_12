@@ -5,9 +5,17 @@ export default class Card extends CoopDom {
         this.question = question;
         this.answer = answer;
         this.column = column;
-
+        
         // construction du dom de la carte
-        this.render();
+        this.domElements = this.render();
+
+        // gestion des événements
+        this.domElements.button_remove.onclick = () => {
+            console.log("click sur le bouton pour supprimer une carte");
+            this.column.removeCard(this);
+        }
+
+        
     }
     render = () => {
         console.log("Dans la fonction render de Card");
@@ -32,9 +40,22 @@ export default class Card extends CoopDom {
             article
         );
 
-        // Il faut maitenant créer un bouton de suppression de la carte
-        // et gérer l'événement click sur ce bouton en appelant la 
-        // méthode removeCard de la class Column
+        const button_remove = this.createAddDomElt(
+            "button",
+            "Supprimer la carte",
+            article
+        );
+
+        /**
+         * Créer un bouton qui va afficher au click un formulaire
+         * qui permettra de modifier la carte (la question et/ou la réponse )
+         */
+        return {
+            "article": article,
+            "question": question,
+            "answer": answer,
+            "button_remove": button_remove
+        };
 
     }
 }
