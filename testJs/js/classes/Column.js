@@ -19,6 +19,7 @@ export default class Column extends CoopDom {
         
     }
     addCard = () => {
+        console.log("dans addCard");
         new Card("Question", "Réponse", this); // this représente l'instance de la colonne
     }
     render = () => {
