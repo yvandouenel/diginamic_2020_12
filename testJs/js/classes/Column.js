@@ -19,18 +19,20 @@ export default class Column extends CoopDom {
         
     }
     addCard = () => {
-        new Card("Question", "Réponse");
+        new Card("Question", "Réponse", this); // this représente l'instance de la colonne
     }
     render = () => {
         // Création  des éléments du DOM grâce à la méthode createAddDomElt héritée de CoopDom
         const section = this.createAddDomElt("section", "", document.getElementById("main"),{"class":"column"});
         const title = this.createAddDomElt("h2", this.title, section);
         const button = this.createAddDomElt("button", "Ajouter une carte", section);
+        const section_cards = this.createAddDomElt("section", "", section ,{"class":"cards"});
 
         return {
             "section": section,
             "title": title,
-            "button": button
+            "button": button,
+            "section_cards": section_cards
         };
     }
 }
