@@ -1,4 +1,4 @@
-import Card from "./classes/Card.js";
+import Column from "./classes/Column.js";
 
-const c1 = new Card("En js, var est xxx scope ?", "function");
-console.log("c1 : ", c1);
+const col1 = new Column("A apprendre");
+console.log("col1 : ", col1);
