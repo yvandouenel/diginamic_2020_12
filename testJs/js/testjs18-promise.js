@@ -43,6 +43,7 @@ async function getTokenUser() { // async prévient que on va manipuler des fonct
         console.log("token : ", token);
         // récupération des infos de l'utilisateur si la récupération du code s'est bien passée
         const user = await getUser();
+        // affichage des infos de l'utilisateur si la récupération des données s'est bien passée.
         console.log("user : ", user);
     } catch (error) {
         console.log('Erreur attrapée : ', error);
