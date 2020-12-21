@@ -1,3 +1,4 @@
+import Board from "./classes/Board.js";
 import Term from "./classes/Term.js";
 import Coopernet from "./services/Coopernet.js";
 
@@ -9,33 +10,58 @@ const coop = new Coopernet("https://www.coopernet.fr");
  * Chainage de promesses
  * 1 - promesse de token
  * 2 - promesse de user (uniquement si la promesse précédente est "resolve")
+ * 3 - promesse de terms 
  */
+let token;
+let user;
+
 async function getTokenUser() {
-    try{
+    try {
         // récupération du token
-        const token = await coop.getToken();
+        token = await coop.getToken();
         console.log("token", token);
 
         // récupération des données de l'utilisateur
-        const user = await coop.getUser("y","y",token);
+        user = await coop.getUser("y", "y", token);
 
         // récupération des termes (rubriques)
         const terms = await coop.getTerms(user, token);
         console.log("termes de y : ", terms);
 
         // parcours du table terms
-        for(let term of terms) {
-            new Term(term);
+        for (let term of terms) {
+            // callback : c'est à dire passage de la référence vers la méthode createBoard
+            new Term(term, createBoard);
         }
     }
-    catch(error){
-        console.log("Erreur attrapée : ", error)
+    catch (error) {
+        error.log("Erreur attrapée : ", error)
     }
+}
+async function createBoard(title, id) {
+    console.log("Dans createBoard ", title, id);
+    try{
+        if (token && user) {
+            // récupération des colonnes
+            const columns = await coop.getCards(user, token, id);
+            console.log("colonnes : ", columns);
+            
+        }
+    }
+    catch(error) {
+        error.log("Erreur attrapée : ", error)
+    }
+    
+
+
+    //new Board(title, columns);
 }
 /**
  * Appel du token et du user de façon asynchrone
  */
 getTokenUser();
+
+
 
 /* function getToken() {
     return fetch("https://www.coopernet.fr/rest/session/token/")
