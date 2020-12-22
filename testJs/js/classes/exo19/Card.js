@@ -60,7 +60,7 @@ export default class Card extends CoopDom {
         // l'affichage de la réponse en paragraphe. Ces deux derniers éléments 
         // sont les fils direct de l'élément du dom "article"
         const question = this.createAddDomElt(
-            "h3",
+            "h4",
             this.question,
             article
         );

@@ -25,7 +25,7 @@ for (h1 of h1s) {
     const visibility = p.style.visibility;
     console.log("visibility : ", visibility);
     // 
-    if (visibility || visibility == "visible") p.style.visibility = "hidden";
+    if (!visibility || visibility == "visible") p.style.visibility = "hidden";
     else p.style.visibility = "visible";
   }
 }
