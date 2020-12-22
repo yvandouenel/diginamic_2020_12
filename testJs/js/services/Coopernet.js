@@ -11,8 +11,7 @@ export default class Coopernet {
         })
         .then(function (data) { // data correspond au retour du résolve (ici deux lignes au dessus)
           return data;
-        })
-        .catch(error => { console.log("Erreur attrapée : ", error) });
+        });
     }
     getUser = (login, pwd, token) => { // y y fonctionne
       console.log("dans getUser");
@@ -44,8 +43,7 @@ export default class Coopernet {
             }
   
           }
-        })
-        .catch(error => { console.error("Erreur attrapée dans getUser", error) });
+        });
   
     };
     getTerms = (user, token) => {
@@ -72,8 +70,7 @@ export default class Coopernet {
           } else {
             throw new Error("Problème de data ", data);
           }
-        })
-        .catch(error => { console.error("Erreur attrapée dans getTerms", error); });
+        });
     };
     getCards = (user, token, term_number) => {
       return fetch(this.url +
@@ -102,8 +99,7 @@ export default class Coopernet {
         } else {
           throw new Error("Problème de data ", data);
         }
-      })
-      .catch(error => { console.error("Erreur attrapée dans getTerms", error); });;
+      });
     }
   }
 

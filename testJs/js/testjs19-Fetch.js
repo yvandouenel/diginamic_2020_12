@@ -19,10 +19,11 @@ async function getTokenUser() {
     try {
         // récupération du token
         token = await coop.getToken();
-        console.log("token", token);
+        console.log("token dans getTokenUser", token);
 
         // récupération des données de l'utilisateur
-        user = await coop.getUser("y", "y", token);
+        user = await coop.getUser("yd", "yd", token);
+        console.log("user dans getTokenUser : ", user);
 
         // récupération des termes (rubriques)
         const terms = await coop.getTerms(user, token);
@@ -35,7 +36,7 @@ async function getTokenUser() {
         }
     }
     catch (error) {
-        error.log("Erreur attrapée : ", error)
+        console.error("Erreur attrapée dans getTokenUser  : ", error)
     }
 }
 async function createBoard(title, id) {
@@ -49,7 +50,7 @@ async function createBoard(title, id) {
         }
     }
     catch(error) {
-        error.log("Erreur attrapée : ", error)
+        console.error("Erreur attrapée : ", error)
     }
     
 
