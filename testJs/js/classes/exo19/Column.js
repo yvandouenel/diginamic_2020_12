@@ -1,11 +1,11 @@
 import Card from "./Card.js";
-import CoopDom from "./CoopDom.js";
+import CoopDom from "../CoopDom.js";
 
 export default class Column extends CoopDom {
-    constructor(title) {
+    constructor(title, cards) {
         super();
         this.title = title;
-        this.cards = []; 
+        this.cards = cards; 
 
         // Appel de la méthode qui va afficher la colonne
         this.domElements = this.render();
@@ -28,7 +28,7 @@ export default class Column extends CoopDom {
     }
     render = () => {
         // Création  des éléments du DOM grâce à la méthode createAddDomElt héritée de CoopDom
-        const section = this.createAddDomElt("section", "", document.getElementById("main"),{"class":"column col-3"});
+        const section = this.createAddDomElt("section", "", document.querySelector("#board"),{"class":"column col-3"});
         const title = this.createAddDomElt("h2", this.title, section);
         const button = this.createAddDomElt("button", "Ajouter une carte", section, {"class":"btn btn-success"});
         const section_cards = this.createAddDomElt("section", "", section ,{"class":"cards"});
@@ -39,5 +39,9 @@ export default class Column extends CoopDom {
             "button": button,
             "section_cards": section_cards
         };
+
+        // il faut faire en sorte que les cartes contenues dans this.cards
+        // génèrent des éléments du dom en passant par la class "Card"
+        
     }
 }

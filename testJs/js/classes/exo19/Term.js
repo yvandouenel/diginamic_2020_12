@@ -1,4 +1,4 @@
-import CoopDom from "./CoopDom.js";
+import CoopDom from "../CoopDom.js";
 export default class Term  extends CoopDom {
     constructor(term, createBoard) {
         super();

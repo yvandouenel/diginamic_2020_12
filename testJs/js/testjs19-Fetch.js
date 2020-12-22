@@ -1,5 +1,5 @@
-import Board from "./classes/Board.js";
-import Term from "./classes/Term.js";
+import Board from "./classes/exo19/Board.js";
+import Term from "./classes/exo19/Term.js";
 import Coopernet from "./services/Coopernet.js";
 
 
@@ -46,16 +46,14 @@ async function createBoard(title, id) {
             // récupération des colonnes
             const columns = await coop.getCards(user, token, id);
             console.log("colonnes : ", columns);
-            
+            const board = new Board(title, columns);
+            console.log("board : ", board);
         }
     }
     catch(error) {
         console.error("Erreur attrapée : ", error)
     }
-    
 
-
-    //new Board(title, columns);
 }
 /**
  * Appel du token et du user de façon asynchrone

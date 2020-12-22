@@ -1,4 +1,4 @@
-import CoopDom from "./CoopDom.js";
+import CoopDom from "../CoopDom.js";
 export default class Card extends CoopDom {
     constructor(question, answer, column) {
         super();
