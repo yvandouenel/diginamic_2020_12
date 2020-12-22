@@ -10,6 +10,9 @@ export default class Column extends CoopDom {
         // Appel de la méthode qui va afficher la colonne
         this.domElements = this.render();
 
+        // Appel de la méthode qui va afficher les cartes
+        this.renderCards();
+
         // Gestion des événements
         this.domElements.button.onclick = () => {
             console.log("click sur le bouton d'ajout d'une carte");
@@ -26,12 +29,20 @@ export default class Column extends CoopDom {
         console.log("Dans removeCard");
         card.domElements.article.remove();// supprime l'élément du dom article de la carte
     }
+    renderCards = () => {
+        // il faut faire en sorte que les cartes contenues dans this.cards
+        // génèrent des éléments du dom en passant par la class "Card"
+        for(let card of this.cards) {
+            new Card(card.question, card.reponse, this);
+        }
+    }
     render = () => {
         // Création  des éléments du DOM grâce à la méthode createAddDomElt héritée de CoopDom
         const section = this.createAddDomElt("section", "", document.querySelector("#board"),{"class":"column col-3"});
         const title = this.createAddDomElt("h2", this.title, section);
         const button = this.createAddDomElt("button", "Ajouter une carte", section, {"class":"btn btn-success"});
         const section_cards = this.createAddDomElt("section", "", section ,{"class":"cards"});
+        
 
         return {
             "section": section,
@@ -39,9 +50,5 @@ export default class Column extends CoopDom {
             "button": button,
             "section_cards": section_cards
         };
-
-        // il faut faire en sorte que les cartes contenues dans this.cards
-        // génèrent des éléments du dom en passant par la class "Card"
-        
     }
 }
